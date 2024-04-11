@@ -5,15 +5,10 @@ import Missing from './pages/Missing';
 import NewPost from './pages/NewPost';
 import PostPage from './pages/PostPage';
 import Home from './pages/Home';
-import {Routes,Route, useNavigate} from 'react-router-dom';
+import {Route,Routes} from 'react-router-dom';
 import Header from './pages/Header';
 import Nav from './Nav';
-import { useEffect, useState } from 'react';
-import {format} from 'date-fns';
-import api from './api/posts';
 import EditPost from './pages/EditPost';
-import useWindowSize from './hooks/useWindowSize';
-import useAxiosFetch from './hooks/useAxiosFetch';
 import { DataProvider } from './context/DataContext';
 
 function App() {

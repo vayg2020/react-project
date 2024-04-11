@@ -1,6 +1,5 @@
-import { Axios } from 'axios';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const useAxiosFetch=(dataURL)=>{
     const[data,setData]=useState();

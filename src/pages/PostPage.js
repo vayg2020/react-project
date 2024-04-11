@@ -3,7 +3,7 @@ import {Link, useParams} from 'react-router-dom';
 import { DataContext } from '../context/DataContext';
 
 function PostPage() {
-  const {posts, handleDelete,handleEditPosts}=useContext(DataContext);
+  const {posts, handleDelete}=useContext(DataContext);
   const {id}= useParams();
   const post= posts.find(post=> (post.id).toString()=== id);
   return (  
@@ -15,7 +15,7 @@ function PostPage() {
         <p className='postDate'>{post.date}</p>
         <p className='postBody'>{post.body}</p>
         <button onClick={()=>handleDelete(post.id)}>Delete</button>
-        <Link to={`/edit/${post.id}`}><button onClick={handleEditPosts}>Edit</button></Link>
+        <Link to={`/edit/${post.id}`}><button>Edit</button></Link>
         </>
         }
        {!post &&

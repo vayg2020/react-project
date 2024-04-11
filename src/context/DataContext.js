@@ -1,6 +1,6 @@
 import { createContext,useEffect,useState } from "react";
 import useWindowSize from '../hooks/useWindowSize'
-import {Routes,Route, useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import {format} from 'date-fns';
 import useAxiosFetch from '../hooks/useAxiosFetch';
 import api from '../api/posts';
@@ -19,14 +19,10 @@ export const DataProvider=({children})=>{
   const {width}=useWindowSize();
 const{data,fetchError,isLoading}=useAxiosFetch("http://localhost:3500/posts")
 
-const handleEditPosts=()=>{
-  console.log("#######");
-  console.log("##########",posts);
-}
 useEffect(()=>{
  const loadPosts=()=>{ setPosts(data);}
  loadPosts();
-},[data,handleEditPosts])
+},[data])
 
    useEffect(()=>{
    if(!posts){
@@ -101,7 +97,7 @@ useEffect(()=>{
 }
 return <DataContext.Provider 
 value={{fetchError,width,search,setSearch,handleSubmit,postTitle,setPostTitle,
-postBody,isLoading, setPostBody, posts,handleDelete,handleEdit,editTitle,setEditTitle,setEditBody,editBody,searchResult,handleEditPosts}}>
+postBody,isLoading, setPostBody, posts,handleDelete,handleEdit,editTitle,setEditTitle,setEditBody,editBody,searchResult}}>
 {children}
 </DataContext.Provider>
 }

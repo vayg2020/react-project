@@ -3,7 +3,7 @@ import Feed from './Feed'
 import { DataContext } from '../context/DataContext'
 
 function Home() {
-  const{width,posts,searchResult,isLoading,fetchError}=useContext(DataContext);
+  const{posts,searchResult,isLoading,fetchError}=useContext(DataContext);
   console.log(" FETCH ERROR  ", `${!fetchError && true}`);
   if(typeof isLoading === "undefined" && fetchError === null){
    return <p>Error</p>
@@ -12,7 +12,7 @@ function Home() {
   return (
     <main className='Home'>
       {isLoading && <p className='statusMsg'>Loading Posts...</p>}
-      {/*!isLoading && fetchError && <p className='statusMsg' style={{color: "red"}}>{fetchError}</p> */}
+      {!isLoading && fetchError && <p className='statusMsg' style={{color: "red"}}>{fetchError}</p> }
       {!isLoading && !fetchError && (
       (posts.length ? 
       (<Feed posts={searchResult}/>)
