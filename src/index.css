@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+  border:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 16px;
+}
+
+body{
+  min-height: 100vh;
+  font-family: 'Courier New', Courier, monospace;
+  -webkit-font-smoothing: antialized;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  background-color: #efefee;
+}
+
+#root{
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.App{
+  width: 100%;
+  max-width: 900px;
+  height: 250vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid black;
+  box-shadow: 0px 0px 15px gray;
+  bottom: 0;
+}
+
+.Header, .footer{
+  width: 100%;
+  background-color: #66d8f5;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer{
+  bottom: 0;
+}
+ 
+.Header h1{
+  font-size: 1.5rem;
+} 
+
+.Header svg{
+  font-size: 2rem;
+}
+
+.Footer{
+  padding: .75rem;
+  display: grid;
+  place-content: center;
+}
+
+.Nav {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; 
+  max-height: 10%;
+  flex-flow: row;
+}
+
+.searchForm{
+  width: 60%;
+  padding: 0.5rem 0 0.5rem 0.25rem;
+}
+
+main{
+  min-height: max-content;
+  min-width: 10px;
+  border:0;
+  margin:0;
+}
+.searchForm input[type="text"]{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 60%;
+  min-height: 38px;
+  font-size: 1rem;
+  padding: .25rem;
+  border-radius: .25rem;
+  outline: none;
+}
+
+.searchForm label{
+  position: absolute;
+  left: -99999px;
+}
+
+/* .Nav label{
+  align-items: center;
+}
+
+.Nav input{
+  padding: .5rem 6.5rem;
+} */
+
+
+
+.Nav ul{
+  color: white;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+}
+
+
+.Nav li{
+  padding: 1rem;
+  align-items: end;
+}
+
+.Nav li:focus, 
+.Nav li:hover{
+  padding: 1rem;
+}
+
+.Nav li a{
+ color: white;
+ text-decoration: none;
+}
+
+.Nav li:focus, 
+.Nav li:hover,
+.Nav li:focus a, 
+.Nav li:hover a
+{
+ background-color: white;
+ color: black;
+}
+
+article{
+  padding: 2rem 2rem;
+  align-items: stretch;
+  height: auto;
+}
+
+.Home, .PostPage, .About, .Missing{
+  width: 100%;
+  flex: .3 1 5px;
+  padding: 0rem;
+  overflow-y: scroll;
+  background-color: white;
+  min-height: 30vh;
+}
+
+NewPost{
+  min-width: 200%;
+}
+
+@media only screen and (min-width: 610px) {
+  html{
+    font-size: 15px;
+  }
+  
+}
+main form .NewPost{
+  display: flexbox;
+  align-items: flex-start;
+  width: 500%;
+}
+
+.NewPost .newPostForm{
+  display: flex;
+ justify-content: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+  width: 200%;
+ 
+}
+
+.NewPost button{
+  padding: 1rem;
+  border: 1 rem;
+}
+
+/* .footer{
+  display: flex;
+  justify-content: flex-end;
+}
+  */
