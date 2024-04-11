@@ -5,8 +5,6 @@ import { DataContext } from '../context/DataContext';
 function EditPost() {
   const {posts, handleEdit, editTitle, setEditTitle, editBody,setEditBody} = useContext(DataContext);
     const {id}=useParams();
-    console.log(" POSTS ********", posts);
-   
     const post=posts.find(post=> (post.id).toString()===id);
     useEffect(()=>{
             if(post){

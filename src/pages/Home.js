@@ -4,7 +4,6 @@ import { DataContext } from '../context/DataContext'
 
 function Home() {
   const{posts,searchResult,isLoading,fetchError}=useContext(DataContext);
-  console.log(" FETCH ERROR  ", `${!fetchError && true}`);
   if(typeof isLoading === "undefined" && fetchError === null){
    return <p>Error</p>
   }

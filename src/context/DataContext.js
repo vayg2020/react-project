@@ -32,12 +32,12 @@ useEffect(()=>{
       ((post.title).toString().toLowerCase()).includes(search.toString().toLowerCase()));
       setSearchResult(filteredResults.reverse());
     }
-   },[posts, search]);
+    //eslint-disable-next-line
+    },[posts]);
 
   const handleSubmit=async(e)=>{
     e.preventDefault();
     const id= posts.length ? Number(posts[posts.length-1].id) + 1 : 1;
-    console.log(" ID ",id);
     const dateTime= format(new Date(),'MMMM dd,yyyy pp');
     const newPost={id, title: postTitle,dateTime,body:postBody}
     try{
@@ -58,7 +58,6 @@ useEffect(()=>{
   }
 
   const handleEdit=async(id)=>{
-    console.log("edit ",id);
     const dateTime= format(new Date(),'MMMM dd,yyyy pp');
     const updatedPost={id, title: editTitle,dateTime,body:editBody}
 
@@ -77,7 +76,6 @@ useEffect(()=>{
   }
   }
   const handleDelete=async(id)=>{
-    console.log(" id ",id);
     try{
       await api.delete(`/posts/${id}`)
       const filteredArray=posts.filter(post=> (post.id).toString()!==id.toString());
